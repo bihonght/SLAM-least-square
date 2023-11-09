@@ -46,33 +46,11 @@ Z = ones(num_landmarks,2);
 %        dh2/dx_i  dh2/dy_i    dh2/dtheta_i]
 
 
-
-% number of epoch: 5
-% i>1 because r(1) is the initial state
-% [X,Z] = slam(2,1,X,Z)     % robot pose r(1), landmark f(1)   
-% [X,Z] = slam(2,2,X,Z)     % robot pose r(1), landmark f(2)   
-% [X,Z] = slam(2,3,X,Z)     % robot pose r(1), landmark f(2)   
-
-% [X,Z] = slam(3,2,X,Z)     % robot pose r(2), landmark f(2)
-% [X,Z] = slam(3,3,X,Z)  
-% 
-% [X,Z] = slam(4,2,X,Z)     % robot pose r(3), landmark f(2)
-% [X,Z] = slam(4,3,X,Z)
-% 
-% [X,Z] = slam(5,3,X,Z)
-% [X,Z] = slam(5,1,X,Z)
-
-for t=1:5
-    for i=2:num_poses
-        for j=1:num_landmarks
-            [X,Z] = slam(i,j,X,Z)
-        end
-    end
+for t=1:5 
+        [X,Z] = slam(X,Z)
 
 
 % [X,Z] = slam(4,2,X,Z)
-
-
 
 %% Plot
 % Create a figure
@@ -110,8 +88,8 @@ grid on;
 % Hold off to stop adding to the current plot
 hold off;
 
-
 end
+
 
 
 

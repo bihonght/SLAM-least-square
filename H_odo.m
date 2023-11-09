@@ -4,7 +4,6 @@ function [output] = H_odo(idx,estimated_X)
 
 global num_landmarks
 
-
 r = estimated_X(idx,:)';
 
 if (idx == 1)

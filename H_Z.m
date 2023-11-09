@@ -1,4 +1,4 @@
-function [output] = H_Z(id_r, id_f,estimated_f, estimated_X)
+function [output] = H_Z(id_r, id_f,estimated_X, estimated_f)
 %H_Z Summary of this function goes here
 %   Detailed explanation goes here
 f = estimated_f(id_f,:)';
